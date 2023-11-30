@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { getAuth, FacebookAuthProvider, signInWithPopup } from "firebase/auth";
 import firebase from '../services/firebase';
 import { FaFacebook } from "react-icons/fa";
-import dataInFirestore  from '../components/Database';
+import { dataInFirestore }  from '../components/Database';
 
 const Login = () => {
 

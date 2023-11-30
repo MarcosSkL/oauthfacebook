@@ -5,13 +5,14 @@ import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import firebase from '../../services/firebase';
 import withAuth from '@/components/Hoc';
 
-const index = () => {
+const Index = () => {
 
    const router = useRouter();
+   const auth = getAuth(firebase);
    const [userData, setUserData] = useState<any>(null);
 
    useEffect(() => {
-      const auth = getAuth(firebase);
+     
       const unsubscribe = onAuthStateChanged(auth, async (user) => {
          if (user) {
             const userId = user.uid;
@@ -59,7 +60,7 @@ const index = () => {
          <section className="h-screen bg-white">
             <div className="h-60 w-screen bg-[url('../../public/assets/polygonal19.jpg')] bg-cover" />
             <div className='h-36 w-36 bg-gray-400 rounded-full ms-20 -mt-14 flex justify-center items-center'>
-               <img src={userData.photoURL} className='rounded-full h-36 w-36' />
+               <img src={userData.photoURL} alt='foto perfil' className='rounded-full h-36 w-36' />
             </div>
             <div className='ms-64 -mt-20'>
                <p className='font-semibold font-serif text-lg'>{userData.displayName}</p>
@@ -79,4 +80,4 @@ const index = () => {
    )
 }
 
-export default withAuth(index);
+export default withAuth(Index);
