@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import withAuth from '@/components/Hoc';
 
 const index = () => {
    return (
@@ -17,4 +18,4 @@ const index = () => {
    )
 }
 
-export default index
+export default withAuth(index);
