@@ -7,7 +7,7 @@ const dataInFirestore = async (userData: any) => {
    await setDoc(userRef, {
       displayName: userData.displayName,
       email: userData.email,
-      photoURL: userData.photoURL
+      photoURL: userData.photoURL,
       
    });
 };

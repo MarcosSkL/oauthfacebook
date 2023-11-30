@@ -1,7 +1,6 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, signOut, browserLocalPersistence, setPersistence } from 'firebase/auth';
 import { getFirestore, doc, getDoc } from 'firebase/firestore';
 import firebase from '../../services/firebase';
 import withAuth from '@/components/Hoc';
@@ -37,6 +36,20 @@ const index = () => {
       return () => unsubscribe();
    }, []);
 
+   const handleLogout = async () => {
+      const auth = getAuth();
+      try {
+         await setPersistence(auth, browserLocalPersistence);
+         await signOut(auth)
+            .then(() => {
+               console.log('Logout realizado com sucesso');
+            })
+      } catch (error) {
+         console.error('Erro ao fazer logout:', error);
+      }
+   };
+
+
    if (!userData) {
       return <p>Carregando...</p>;
    }
@@ -49,8 +62,17 @@ const index = () => {
                <img src={userData.photoURL} className='rounded-full h-36 w-36' />
             </div>
             <div className='ms-64 -mt-20'>
-               <p>{userData.displayName}</p>
-               <p>{userData.email}</p>
+               <p className='font-semibold font-serif text-lg'>{userData.displayName}</p>
+               <p className='font-mono'>{userData.email}</p>
+            </div>
+            <div className='flex justify-end me-10 -mt-10 '>
+               <button
+                  type="button"
+                  onClick={handleLogout}
+                  className="inline-block rounded bg-red-500 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-sm transition duration-150 ease-in-out hover:shadow-xl"
+               >
+                  Sair
+               </button>
             </div>
          </section>
       </>
