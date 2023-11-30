@@ -22,7 +22,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 - Você instalou a versão mais recente de `NodeJS`
 - Você tem uma máquina `Windows / Linux / Mac`
 
-## 🚀 Instalando saiba_politico>
+## 🚀 Instalando oauthfacebook
 
 Para instalar o oauthfacebook
 , siga estas etapas:
