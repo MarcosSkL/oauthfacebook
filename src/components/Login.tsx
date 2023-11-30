@@ -1,9 +1,9 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { getAuth, User, FacebookAuthProvider, signInWithPopup } from "firebase/auth";
-import { getFirestore, collection, doc, setDoc } from 'firebase/firestore';
+import { getAuth, FacebookAuthProvider, signInWithPopup } from "firebase/auth";
 import firebase from '../services/firebase';
 import { FaFacebook } from "react-icons/fa";
+import dataInFirestore  from '../components/Database';
 
 const Login = () => {
 
@@ -14,16 +14,10 @@ const Login = () => {
       const provider = new FacebookAuthProvider();
       signInWithPopup(auth, provider)
          .then(async (result) => {
-            const user = result.user as User;
+            console.log(result);
 
-            const db = getFirestore();
-            const userRef = doc(db, 'users', user.uid);
-
-            await setDoc(userRef, {
-               displayName: user.displayName,
-               email: user.email,
-               photoURL: user.photoURL
-            });
+            const user = result.user;
+            await dataInFirestore(user);
 
             router.push('/user')
 
