@@ -1,13 +1,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_APIKEY,
-  authDomain: process.env.NEXT_PUBLIC_AUTHDOMAIN,
-  projectId: process.env.NEXT_PUBLIC_PROJECTID,
-  storageBucket: process.env.NEXT_PUBLIC_STORAGEBUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGINGSENDERID,
-  appId: process.env.NEXT_PUBLIC_APPID
-
+  apiKey: "AIzaSyDk7khU5tiU9H0GMggwzY1H7qCfF8Rtom4",
+  authDomain: "oauthfacebook-77caa.firebaseapp.com",
+  projectId: "oauthfacebook-77caa",
+  storageBucket: "oauthfacebook-77caa.appspot.com",
+  messagingSenderId: "891745454596",
+  appId: "1:891745454596:web:a4d7a5bb18a960687a4351"
 };
 
 
