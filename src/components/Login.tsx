@@ -8,7 +8,7 @@ const Login = () => {
             <div className="h-full">
 
                <div
-                  className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
+                  className="flex h-full flex-wrap items-center justify-center lg:justify-between">
                   <div
                      className="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
                      <img
@@ -26,7 +26,7 @@ const Login = () => {
                            <p className="mb-0 mr-4 text-lg">Entrar com</p>
 
 
-                           <button type="button" className='flex gap-1 text-lg items-center'>
+                           <button type="button" className='flex gap-1 text-lg items-center transition duration-150 ease-linear hover:shadow-xl'>
                               <span className='text-blue-500 font-bold'>facebook</span>
                               <FaFacebook className="text-blue-500 text-xl" />
                            </button>
@@ -37,7 +37,7 @@ const Login = () => {
                            className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
                            <p
                               className="mx-4 mb-0 text-center font-semibold dark:text-white">
-                              Ou criar conta
+                              Ou entrar com uma conta
                            </p>
                         </div>
 
@@ -73,7 +73,7 @@ const Login = () => {
                         <div className="text-center lg:text-left">
                            <button
                               type="button"
-                              className="inline-block rounded bg-blue-500 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                              className="inline-block rounded bg-blue-500 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-sm transition duration-150 ease-in-out hover:shadow-xl"
                            >
                               Login
                            </button>
