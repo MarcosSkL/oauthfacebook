@@ -14,10 +14,7 @@ const Login = () => {
             // O usuário entrou com sucesso.
             // Você pode usar o objeto result para obter informações do usuário.
             console.log(result);
-
-            // Acessando o e-mail do usuário
-            const email = result.user.email;
-            console.log(email);
+   
          })
          .catch((error) => {
             // Ocorreu um erro durante o login.
